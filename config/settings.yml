@@ -1,0 +1,5 @@
+user:
+  max_length_full_name: 50
+  max_length_password: 12
+  max_length_user_name: 10
+  min_length_password: 4
