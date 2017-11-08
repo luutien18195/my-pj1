@@ -25,7 +25,8 @@ en:
     login: "Log in"
     logout: "Log out"
     news: "News"
-    signup: "Signup"
+    signup: "Sign up"
     signup_now: "Sign up now!"
+    user: "User"
     welcome_to_project: "Welcome to my project"
 
