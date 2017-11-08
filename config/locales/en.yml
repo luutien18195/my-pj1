@@ -1,16 +1,27 @@
 en:
-  title:
-    home: "Home"
-    help: "Help"
-    about: "About"
-    app_name: "App name"
-    contact: "Contact"
-    login: "Login"
-    signup: "Signup"
-    signup_now: "Sign up now!"
-    news: "News"
-    welcome_to_project: "Welcome to my project"
+  button:
+    create_account: "Create my account"
+
+  notification:
+    success: "Success !! , please check activate"
+    failed: "That failed, please try again later"
+    can_not_find_user: "Can not find this user, please try again!! "
 
   text:
-    lorem_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Proin aliquam leo id augue lobortis, sed condimentum orci pellentesque."
+    error_text: "error"
+    form_contains_text: "The form contains"
+    lorem_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam leo id augue lobortis, sed condimentum orci pellentesque."
+
+  title:
+    about: "About"
+    app_name: "App name"
+    confirmation: "Confirmation"
+    contact: "Contact"
+    help: "Help"
+    home: "Home"
+    login: "Login"
+    news: "News"
+    signup: "Signup"
+    signup_now: "Sign up now!"
+    welcome_to_project: "Welcome to my project"
+
