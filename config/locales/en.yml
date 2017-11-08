@@ -6,20 +6,24 @@ en:
     success: "Success !! , please check activate"
     failed: "That failed, please try again later"
     can_not_find_user: "Can not find this user, please try again!! "
+    invalid_user: "Invalid username/password combination"
 
   text:
     error_text: "error"
     form_contains_text: "The form contains"
     lorem_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam leo id augue lobortis, sed condimentum orci pellentesque."
+    new_user: "New user?"
 
   title:
     about: "About"
+    account: "Account"
     app_name: "App name"
     confirmation: "Confirmation"
     contact: "Contact"
     help: "Help"
     home: "Home"
-    login: "Login"
+    login: "Log in"
+    logout: "Log out"
     news: "News"
     signup: "Signup"
     signup_now: "Sign up now!"
