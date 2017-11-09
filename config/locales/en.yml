@@ -1,9 +1,11 @@
 en:
   button:
     create_account: "Create my account"
+    save_changes: "Save changes"
 
   notification:
-    success: "Success !! , please check activate"
+    success: "Successfully !! , please check activate"
+    success_updated: "Profile updated !!"
     failed: "That failed, please try again later"
     can_not_find_user: "Can not find this user, please try again!! "
     invalid_user: "Invalid username/password combination"
@@ -17,9 +19,10 @@ en:
   title:
     about: "About"
     account: "Account"
-    app_name: "App name"
+    app_name: "My blog demo"
     confirmation: "Confirmation"
     contact: "Contact"
+    edit_user: "Edit user"
     help: "Help"
     home: "Home"
     login: "Log in"
@@ -27,6 +30,7 @@ en:
     news: "News"
     signup: "Sign up"
     signup_now: "Sign up now!"
+    update_profile: "Update your profile"
     user: "User"
     welcome_to_project: "Welcome to my project"
 

@@ -1,0 +1,17 @@
+<%= form_for @user do |f| %>
+  <%= render "shared/error_messages" %>
+
+  <%= f.label :full_name %>
+  <%= f.text_field :full_name, class: "form-control" %>
+
+  <%= f.label :user_name %>
+  <%= f.text_field :user_name, class: "form-control" %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: "form-control" %>
+
+  <%= f.label :password_confirmation, t("title.confirmation") %>
+  <%= f.password_field :password_confirmation, class: "form-control" %>
+
+  <%= f.submit t("button.save_changes"), class: "btn btn-primary" %>
+<% end %>
