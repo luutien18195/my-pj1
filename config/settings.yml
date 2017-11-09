@@ -1,6 +1,7 @@
 user:
+  avatar_header_size: 22
+  avatar_size: 80
   max_length_full_name: 50
   max_length_password: 20
   max_length_user_name: 20
   min_length_password: 3
-  avatar_size: 80
