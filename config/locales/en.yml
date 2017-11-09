@@ -8,7 +8,9 @@ en:
     success_updated: "Profile updated !!"
     failed: "That failed, please try again later"
     can_not_find_user: "Can not find this user, please try again!! "
+    can_not_delete: "Can not delete, please try again later !"
     invalid_user: "Invalid username/password combination"
+    post_deleted: "Post deleted"
 
   text:
     error_text: "error"
