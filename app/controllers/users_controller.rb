@@ -1,12 +1,17 @@
 class UsersController < ApplicationController
   before_action :load_user, except: %i(new create)
+  before_action :logged_in_user, except: %i(show new create)
 
   def new
     @user = User.new
   end
 
+  def index
+    @users = User.all
+  end
+
   def show
-    load_user
+    @posts = @user.posts
   end
 
   def create

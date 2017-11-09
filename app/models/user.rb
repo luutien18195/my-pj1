@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   before_save {user_name.downcase!}
+  has_many :posts
+
   validates :full_name, presence: true,
     length: {maximum: Settings.user.max_length_full_name}
 
@@ -14,4 +16,7 @@ class User < ApplicationRecord
     length: {minimum: Settings.user.min_length_password,
     maximum: Settings.user.max_length_password}
 
+  def feed
+    Post
+  end
 end
