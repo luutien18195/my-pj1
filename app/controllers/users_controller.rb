@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :load_user, except: %i(new create)
+
   def new
     @user = User.new
   end
@@ -17,6 +19,17 @@ class UsersController < ApplicationController
     else
       flash[:warning] = t "notification.failed"
       render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "notification.success_updated"
+      redirect_to @user
+    else
+      render :edit
     end
   end
 
