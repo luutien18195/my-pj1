@@ -1,0 +1,13 @@
+<%= form_for([post, @comment]) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="field">
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.text_field :content, placeholder: "New comment .." %>
+      </div>
+      <div class="col-md-2">
+        <%= f.submit "Comment",class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

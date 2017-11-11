@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @posts = @user.posts
+    @posts = Post.order_by_created_at_desc.paginate page: params[:page], per_page: Settings.all.per_page
   end
 
   def create

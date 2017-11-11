@@ -139,6 +139,34 @@ aside {
   border-radius: 50%;
 }
 
+/* comments */
+
+.posts .comments {
+  list-style-type: none;
+  padding-left: 50px;
+  li {
+    border-top: none;
+    padding: 10px 0;
+  }
+  .user_cm {
+    margin: 5em 0 0 5px;
+    padding-top: 0;
+  }
+  .content_cm {
+    display: block;
+    margin-left: 34px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp_cm {
+    color: $gray-light;
+    display: block;
+    margin-left: 34px;
+  }
+}
+
 /* forms */
 
 #error_explanation {
@@ -158,8 +186,10 @@ aside {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid $gray-medium-dark;
+  border-radius: 3px;
   width: 100%;
-  margin-bottom: 15px;
+  margin: 5px 0 15px;
+  padding:5px;
   @include box-sizing(border-box);
 }
 
