@@ -1,9 +1,14 @@
+all:
+  per_page: 3
 user:
   avatar_header_size: 22
   avatar_size: 80
+  avatar_size_for_comment: 25
   avatar_size_for_post: 50
   max_length_content: 100
   max_length_full_name: 50
   max_length_password: 20
   max_length_user_name: 20
+  max_length_title: 20
   min_length_password: 3
+
