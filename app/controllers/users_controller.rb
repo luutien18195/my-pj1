@@ -1,17 +1,20 @@
 class UsersController < ApplicationController
   before_action :load_user, except: %i(new create)
+  before_action :correct_user, only: %i(edit update)
   before_action :logged_in_user, except: %i(show new create)
+
+  def index
+    @users = User.select_id_fullName_userName.order_created_at
+      .paginate page: params[:page], per_page: Settings.per_page
+  end
 
   def new
     @user = User.new
   end
 
-  def index
-    @users = User.all
-  end
-
   def show
-    @posts = Post.order_by_created_at_desc.paginate page: params[:page], per_page: Settings.all.per_page
+    @posts = @user.posts.order_by_created_at_desc
+      .paginate page: params[:page], per_page: Settings.all.per_page
   end
 
   def create
@@ -28,6 +31,18 @@ class UsersController < ApplicationController
   end
 
   def edit; end
+
+  def following
+    @title = "Following"
+    @users = @user.following.paginate page: params[:page]
+    render "show_follow"
+  end
+
+  def followers
+    @title = "Followers"
+    @users = @user.followers.paginate page: params[:page]
+    render "show_follow"
+  end
 
   def update
     if @user.update_attributes user_params
@@ -46,6 +61,11 @@ class UsersController < ApplicationController
     return if @user
     flash[:warning] = t "notification.can_not_find_user"
     redirect_to root_path
+  end
+
+  def correct_user
+    @user = User.find_by id: params[:id]
+    redirect_to root_path unless @user.current_user?(current_user)
   end
 
   def user_params

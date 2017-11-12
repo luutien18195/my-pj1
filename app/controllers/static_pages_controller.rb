@@ -3,7 +3,10 @@ class StaticPagesController < ApplicationController
     if logged_in?
       @post = current_user.posts.build
       @comment = current_user.comments.build
-      @feed_items = current_user.feed.paginate page: params[:page]
+      @feed_items = current_user.feed.order_by_created_at_desc
+        .paginate page: params[:page]
+    else
+      @user = User.new
     end
   end
 

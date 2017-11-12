@@ -16,7 +16,14 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
   resources :users
   resources :posts, only: %i(create destroy)
   resources :comments, only: %i(create destroy)
+  resources :relationships, only: %i(create destroy)
 end

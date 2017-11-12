@@ -5,18 +5,95 @@
       <section class="user_info">
         <%= render "shared/user_info" %>
       </section>
+      <section class="stats">
+        <%= render "shared/stats" %>
+      </section>
       <section class="post_form">
         <%= render "shared/post_form" %>
       </section>
     </aside>
     <div class="col-md-8">
-      <h3>Post Feed</h3>
+      <h3>All Posts</h3>
       <%= render "shared/feed" %>
     </div>
   </div>
 <% else %>
+  <div class="modal fade" id="signup" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 class="modal-title">
+            <%= t "title.signup" %>
+          </h1>
+        </div>
+        <div class="modal-body">
+          <%= form_for @user do |f| %>
+            <%= render "shared/error_messages", object: f.object %>
+
+            <%= f.label :full_name %>
+            <%= f.text_field :full_name, class: "form-control" %>
+
+            <%= f.label :user_name %>
+            <%= f.text_field :user_name, class: "form-control" %>
+
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "form-control" %>
+
+            <%= f.label :password_confirmation, t("title.confirmation") %>
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+
+            <%= f.submit t("button.save_changes"), class: "btn btn-primary" %>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal fade" id="login" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 class="modal-title">
+            <%= t "title.login" %>
+          </h1>
+        </div>
+        <div class="modal-body">
+         <%= form_for(:session, url: login_path) do |f| %>
+
+          <%= f.label :user_name %>
+          <%= f.text_field :user_name, class: "form-control" %>
+
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control" %>
+
+          <%= f.submit t("title.login"), class: "btn btn-primary" %>
+
+        <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 <div class="center jumbotron">
   <h1><%= t "title.welcome_to_project" %></h1>
-  <%= link_to t("signup_now"), signup_path, class: "btn btn-lg btn-primary" %>
+  <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#signup">
+    <%= t "title.signup_now" %>
+  </button>
+  Or
+  <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#login">
+    <%= t "title.login" %>
+  </button>
 </div>
 <% end %>
